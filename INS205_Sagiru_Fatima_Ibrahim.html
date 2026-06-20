@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sagiru Fatima Ibrahim - INS205 Assessment</title>
+
+<style>
+/* General page styling */
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:20px;
+    line-height:1.6;
+}
+
+/* Main heading styling */
+h1{
+    text-align:center;
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* Section styling */
+section{
+    background:white;
+    padding:20px;
+    margin:20px 0;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#2c3e50;
+}
+
+/* Email button */
+#send-btn{
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:5px;
+    display:inline-block;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>INS205 Static Web Application Assessment</h1>
+
+<section>
+    <h2>About Me</h2>
+
+    <p><strong>Full Name:</strong> Sagiru Fatima Ibrahim</p>
+    <p><strong>Department:</strong> Computer Science</p>
+    <p><strong>Matric Number:</strong> UJ/2025/CP/0387</p>
+    <p><strong>Level:</strong> 200 Level</p>
+
+    <p>
+        I am a Computer Science student at the University of Jos.
+        I am passionate about technology, programming, web development,
+        cybersecurity and software engineering.
+    </p>
+</section>
+
+<section>
+    <h2>About This Page</h2>
+
+    <p>
+        This webpage was created as part of the INS205 assessment.
+        The purpose of the assignment is to demonstrate knowledge of
+        HTML5, CSS and basic web design principles.
+    </p>
+
+    <p>
+        The webpage contains information about the student,
+        the course and a functional contact button.
+    </p>
+</section>
+
+<section>
+    <h2>Contact Me</h2>
+
+    <p>Click the button below to contact me.</p>
+
+    <a href="mailto:2025cp0387@unijos.edu.ng" id="send-btn">
+        Send Email
+    </a>
+</section>
+
+<footer>
+    <p>&copy; 2026 Sagiru Fatima Ibrahim | INS205 Assessment</p>
+</footer>
+
+<script>
+        /* -------------------------------------------------------
+           Matric-number → button colour
+           Replace the matric value below with your own number.
+           ------------------------------------------------------- */
+        const matric = "UJ/2025/CP/0387";
+
+	/* CHANGE NOTHING BEYOND THIS POINT - CHANGE NOTHING BEYOND THIS POINT */
+
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+            }
+            return hash;
+        }
+
+        const normalised = matric.trim().toUpperCase();
+        const hue = hashString(normalised) % 360;
+        const buttonColour = `hsl(${hue}, 65%, 45%)`;
+        document.getElementById("send-btn").style.background = buttonColour;
+</script>
+
+</body>
+</html>
